@@ -1,3 +1,32 @@
+  GitHub Repository
+       ↓
+     main
+       ↓
+Developer creates branch
+       ↓
+feature/login
+       ↓
+Coding
+       ↓
+git add .
+       ↓
+git commit
+       ↓
+git push
+       ↓
+Pull Request
+       ↓
+Code Review
+       ↓
+Approval
+       ↓
+Merge → main
+       ↓
+Other developers
+git pull origin main
+  
+  
+  
                     GitHub Repository
                            │
                          main
