@@ -1,0 +1,28 @@
+                    GitHub Repository
+                           │
+                         main
+                           │
+             ┌─────────────┼─────────────┐
+             ↓             ↓             ↓
+        Tanuj Branch   Rahul Branch   Priya Branch
+        Login Module   Payment Module  Profile Module
+             │             │             │
+             ↓             ↓             ↓
+           Commit        Commit        Commit
+             │             │             │
+             ↓             ↓             ↓
+           Push          Push          Push
+             │             │             │
+             └─────────────┼─────────────┘
+                           ↓
+                    Pull Request
+                           ↓
+                     Code Review
+                           ↓
+                         Merge
+                           ↓
+                         main
+                           ↓
+                    git pull origin main
+                           ↓
+                    Everyone Updated
