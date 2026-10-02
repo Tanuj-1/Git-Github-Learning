@@ -21,5 +21,16 @@ stages :-
 
 git status -s --> check kr skte h konsi file kis stage m hai 
 
+git status -s sirf unka status btata h jo files committed nhi h ya fir commit hone k bad change ho gyi h jese commit krne k bad delete kr di ya modify
+
+git status btata h file k changes k bare m and uske chages k bare m before commit or after commit 
+
+--------------------------------------------------
+
+
 git log --oneline --graph --> check kr skte h kitni saved checkpoints hai 
 
+git log btata h sare commit history 
+
+
+branching 
