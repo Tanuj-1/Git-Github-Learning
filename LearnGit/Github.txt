@@ -1,0 +1,1056 @@
+# GitHub – Complete Notes
+
+## 1. What is GitHub?
+
+GitHub is a **cloud-based platform** used to store, manage, share, and collaborate on software projects using **Git**.
+
+GitHub mainly provides:
+
+* Remote repositories
+* Code hosting
+* Collaboration
+* Pull Requests
+* Code Review
+* Issue Tracking
+* Branch Management
+* Project Management
+* Open Source Collaboration
+
+**Simple Definition:**
+
+> GitHub is an online platform where developers store Git repositories and collaborate on projects.
+
+---
+
+# 2. Git vs GitHub
+
+| Git                           | GitHub                         |
+| ----------------------------- | ------------------------------ |
+| Version Control System        | Cloud-based platform           |
+| Works mainly on local machine | Works online                   |
+| Tracks code changes           | Hosts Git repositories         |
+| Created by Linus Torvalds     | Owned by Microsoft             |
+| Can work without internet     | Usually requires internet      |
+| Command-line/tool             | Web platform + Git integration |
+
+### Example
+
+```text
+Git = Tool
+GitHub = Online Platform
+```
+
+---
+
+# 3. Repository
+
+A **Repository (Repo)** is a project folder managed by Git.
+
+It contains:
+
+* Source code
+* Git history
+* Branches
+* Commits
+* README
+* Configuration files
+
+Example:
+
+```text
+E-Commerce-Project/
+│
+├── src/
+├── pom.xml
+├── README.md
+└── .git/
+```
+
+---
+
+# 4. Local Repository
+
+Repository present on your computer.
+
+Example:
+
+```text
+C:\Users\Tanuj\ECommerceProject
+```
+
+---
+
+# 5. Remote Repository
+
+Repository stored online, usually on GitHub.
+
+Example:
+
+```text
+GitHub
+   ↓
+ECommerceProject
+```
+
+---
+
+# 6. GitHub Repository Creation
+
+Steps:
+
+1. Open GitHub
+2. Click **New Repository**
+3. Enter repository name
+4. Add description
+5. Select Public/Private
+6. Add README if required
+7. Add `.gitignore` if required
+8. Click **Create Repository**
+
+---
+
+# 7. Public Repository
+
+Anyone can view the repository.
+
+Useful for:
+
+* Portfolio
+* Resume
+* Open-source projects
+* Showing projects to recruiters
+
+---
+
+# 8. Private Repository
+
+Only authorized people can access the repository.
+
+Useful for:
+
+* Company projects
+* Private projects
+* Personal projects
+
+---
+
+# 9. Clone
+
+`git clone` copies a remote GitHub repository to your local computer.
+
+```bash
+git clone https://github.com/username/project.git
+```
+
+Example:
+
+```bash
+git clone https://github.com/Tanuj/project.git
+```
+
+After cloning:
+
+```bash
+cd project
+```
+
+---
+
+# 10. GitHub Remote
+
+A remote is a connection between the local repository and GitHub repository.
+
+Common remote name:
+
+```text
+origin
+```
+
+Check remote:
+
+```bash
+git remote -v
+```
+
+Add remote:
+
+```bash
+git remote add origin https://github.com/username/project.git
+```
+
+Remove remote:
+
+```bash
+git remote remove origin
+```
+
+Change remote:
+
+```bash
+git remote set-url origin https://github.com/username/new-project.git
+```
+
+---
+
+# 11. Push
+
+Push sends local commits to GitHub.
+
+```bash
+git push
+```
+
+First push:
+
+```bash
+git push -u origin main
+```
+
+For another branch:
+
+```bash
+git push -u origin feature/login
+```
+
+---
+
+# 12. Pull
+
+Pull downloads the latest changes from GitHub and integrates them into the current local branch.
+
+```bash
+git pull
+```
+
+Example:
+
+```bash
+git pull origin main
+```
+
+---
+
+# 13. Fetch
+
+Fetch downloads changes from GitHub but does not automatically merge them into the current branch.
+
+```bash
+git fetch
+```
+
+Example:
+
+```bash
+git fetch origin
+```
+
+### Difference
+
+```text
+git fetch
+↓
+Download changes only
+
+git pull
+↓
+Fetch + Merge
+```
+
+---
+
+# 14. GitHub Workflow
+
+Basic workflow:
+
+```text
+Working Directory
+       ↓
+   git add .
+       ↓
+ Staging Area
+       ↓
+git commit -m "message"
+       ↓
+ Local Repository
+       ↓
+git push
+       ↓
+ GitHub Repository
+```
+
+---
+
+# 15. First Time Push to GitHub
+
+```bash
+cd "project-path"
+
+git init
+
+git add .
+
+git commit -m "Initial commit"
+
+git branch -M main
+
+git remote add origin https://github.com/username/project.git
+
+git push -u origin main
+```
+
+---
+
+# 16. git status
+
+Shows the current state of the repository.
+
+```bash
+git status
+```
+
+It shows:
+
+* Modified files
+* Untracked files
+* Staged files
+* Current branch
+
+---
+
+# 17. git add
+
+Moves changes to the staging area.
+
+Add one file:
+
+```bash
+git add File.java
+```
+
+Add all files:
+
+```bash
+git add .
+```
+
+---
+
+# 18. git commit
+
+Saves staged changes into local Git history.
+
+```bash
+git commit -m "Added login functionality"
+```
+
+Important:
+
+```bash
+git commit -m "message"
+```
+
+`-m` means commit message.
+
+---
+
+# 19. Branch
+
+A branch is an independent line of development.
+
+Example:
+
+```text
+main
+ │
+ ├── feature/login
+ │
+ ├── feature/payment
+ │
+ └── feature/profile
+```
+
+---
+
+# 20. Main Branch
+
+`main` is commonly used as the primary/default branch.
+
+Example:
+
+```bash
+git switch main
+```
+
+---
+
+# 21. Create Branch
+
+```bash
+git branch feature/login
+```
+
+Create and switch:
+
+```bash
+git switch -c feature/login
+```
+
+Older command:
+
+```bash
+git checkout -b feature/login
+```
+
+---
+
+# 22. List Branches
+
+Local branches:
+
+```bash
+git branch
+```
+
+All branches:
+
+```bash
+git branch -a
+```
+
+---
+
+# 23. Switch Branch
+
+```bash
+git switch feature/login
+```
+
+Go to main:
+
+```bash
+git switch main
+```
+
+---
+
+# 24. Delete Branch
+
+Local:
+
+```bash
+git branch -d feature/login
+```
+
+Force delete:
+
+```bash
+git branch -D feature/login
+```
+
+Remote:
+
+```bash
+git push origin --delete feature/login
+```
+
+---
+
+# 25. Pull Request (PR)
+
+A Pull Request is a request to merge changes from one branch into another branch.
+
+Example:
+
+```text
+feature/login
+      ↓
+     Push
+      ↓
+GitHub
+      ↓
+Pull Request
+      ↓
+Code Review
+      ↓
+Approval
+      ↓
+Merge
+      ↓
+main
+```
+
+---
+
+# 26. Pull Request Workflow
+
+```bash
+git switch -c feature/login
+
+# Make changes
+
+git add .
+
+git commit -m "Added login feature"
+
+git push -u origin feature/login
+```
+
+Then on GitHub:
+
+```text
+Compare & Pull Request
+        ↓
+Create Pull Request
+        ↓
+Code Review
+        ↓
+Approval
+        ↓
+Merge Pull Request
+```
+
+---
+
+# 27. Code Review
+
+Code Review means another developer checks your code before merging.
+
+Reviewers check:
+
+* Code quality
+* Bugs
+* Security
+* Naming
+* Performance
+* Logic
+* Project standards
+
+---
+
+# 28. Merge
+
+Merge combines changes from one branch into another.
+
+Example:
+
+```bash
+git switch main
+git merge feature/login
+```
+
+---
+
+# 29. Fast-Forward Merge
+
+Occurs when branches have not diverged.
+
+```text
+main
+ A
+  \
+   B
+    \
+     C
+```
+
+Main pointer simply moves forward.
+
+No separate merge commit is required.
+
+---
+
+# 30. Three-Way Merge
+
+Occurs when both branches have different commits.
+
+```text
+       B---C  feature
+      /
+A---- 
+      \
+       D---E  main
+```
+
+Git uses:
+
+* Common ancestor
+* Current branch
+* Incoming branch
+
+Usually creates a merge commit.
+
+---
+
+# 31. Squash Merge
+
+Combines multiple feature commits into one commit.
+
+Example:
+
+```text
+Before:
+
+commit 1
+commit 2
+commit 3
+commit 4
+
+After Squash:
+
+Add Login Feature
+```
+
+Command:
+
+```bash
+git merge --squash feature/login
+git commit -m "Add login feature"
+```
+
+---
+
+# 32. Rebase
+
+Rebase moves/replays commits on top of another branch.
+
+```bash
+git switch feature/login
+git rebase main
+```
+
+Then:
+
+```bash
+git switch main
+git merge feature/login
+```
+
+Rebase usually produces a cleaner linear history.
+
+**Important:** Avoid rebasing shared/public branches unless the team workflow explicitly allows it because it rewrites commit history.
+
+---
+
+# 33. Merge Conflict
+
+A merge conflict occurs when Git cannot automatically decide which changes to keep.
+
+Example:
+
+```text
+Developer A → login.java
+Developer B → login.java
+
+Both modify the same lines
+          ↓
+      Conflict
+```
+
+Conflict markers:
+
+```text
+<<<<<<< HEAD
+Your Code
+=======
+Other Branch Code
+>>>>>>> feature/login
+```
+
+Fix manually, then:
+
+```bash
+git add .
+git commit -m "Resolve merge conflict"
+```
+
+---
+
+# 34. Collaboration Using GitHub
+
+Example:
+
+```text
+              GitHub
+                 │
+          E-Commerce Repo
+                 │
+       ┌─────────┼─────────┐
+       ↓         ↓         ↓
+     Tanuj     Rahul     Priya
+     Login     Payment   Profile
+       │         │         │
+ feature/     feature/   feature/
+ login        payment    profile
+       │         │         │
+       └─────────┼─────────┘
+                 ↓
+            Pull Request
+                 ↓
+             Code Review
+                 ↓
+               Merge
+                 ↓
+                main
+```
+
+---
+
+# 35. Fork
+
+A fork creates your own copy of another person's GitHub repository under your GitHub account.
+
+Commonly used in:
+
+* Open Source
+* Contributing to projects
+
+Example:
+
+```text
+Original Repository
+        ↓
+       Fork
+        ↓
+Your GitHub Repository
+```
+
+---
+
+# 36. Fork vs Clone
+
+### Fork
+
+Creates a copy on GitHub.
+
+```text
+GitHub → Your GitHub
+```
+
+### Clone
+
+Copies repository from remote to your computer.
+
+```text
+GitHub → Local Computer
+```
+
+---
+
+# 37. README.md
+
+README explains the project.
+
+Common sections:
+
+```text
+Project Title
+Description
+Features
+Technologies Used
+Requirements
+Installation
+Database Setup
+Project Structure
+How to Run
+API Documentation
+Screenshots
+Future Enhancements
+Author
+```
+
+---
+
+# 38. .gitignore
+
+`.gitignore` tells Git which files/folders should not be tracked.
+
+Example:
+
+```text
+target/
+.classpath
+.project
+.settings/
+*.class
+.env
+```
+
+For Java/Maven:
+
+```text
+target/
+*.class
+```
+
+Never commit sensitive information such as:
+
+```text
+Passwords
+API Keys
+Database Credentials
+Private Tokens
+.env
+```
+
+---
+
+# 39. GitHub Issues
+
+Issues are used to track:
+
+* Bugs
+* Features
+* Tasks
+* Improvements
+* Questions
+
+Example:
+
+```text
+Issue #1
+Title: Fix Login Bug
+
+Description:
+Login fails when password contains special characters.
+```
+
+---
+
+# 40. GitHub Projects
+
+GitHub Projects helps manage project tasks.
+
+Example:
+
+```text
+To Do
+↓
+In Progress
+↓
+Review
+↓
+Done
+```
+
+---
+
+# 41. GitHub Actions
+
+GitHub Actions is used for automation and CI/CD.
+
+It can automatically:
+
+```text
+Push Code
+    ↓
+Build
+    ↓
+Run Tests
+    ↓
+Check Code
+    ↓
+Deploy
+```
+
+Example use:
+
+```text
+GitHub → Maven Build → Unit Tests → Deployment
+```
+
+---
+
+# 42. GitHub Releases
+
+Releases are used to publish versions of a project.
+
+Example:
+
+```text
+v1.0.0
+v1.1.0
+v2.0.0
+```
+
+Useful for:
+
+* Version management
+* Software releases
+* Downloadable builds
+
+---
+
+# 43. Tags
+
+Tags mark specific commits as important versions.
+
+Create tag:
+
+```bash
+git tag v1.0
+```
+
+Push tag:
+
+```bash
+git push origin v1.0
+```
+
+Push all tags:
+
+```bash
+git push origin --tags
+```
+
+---
+
+# 44. GitHub Authentication
+
+GitHub no longer uses normal account passwords for Git operations over HTTPS.
+
+Common authentication methods:
+
+* Personal Access Token (PAT)
+* SSH
+* GitHub CLI
+* Credential Manager
+
+---
+
+# 45. Personal Access Token (PAT)
+
+PAT can be used instead of a password for HTTPS Git operations.
+
+Basic concept:
+
+```text
+Git
+ ↓
+GitHub
+ ↓
+Authentication
+ ↓
+Personal Access Token
+```
+
+Never share your token publicly.
+
+---
+
+# 46. SSH
+
+SSH allows secure authentication with GitHub without repeatedly entering credentials.
+
+Basic setup:
+
+```bash
+ssh-keygen -t ed25519 -C "your-email@example.com"
+```
+
+Then add the public key to GitHub.
+
+Test:
+
+```bash
+ssh -T git@github.com
+```
+
+---
+
+# 47. GitHub Collaborators
+
+Repository owner can add developers as collaborators.
+
+Example:
+
+```text
+Owner
+ ↓
+Repository Settings
+ ↓
+Collaborators
+ ↓
+Add People
+ ↓
+Developer accepts invitation
+```
+
+---
+
+# 48. GitHub Organization
+
+An Organization is used to manage repositories and teams for groups.
+
+Example:
+
+```text
+Company Organization
+       │
+ ┌─────┼─────┐
+Team A Team B Team C
+```
+
+---
+
+# 49. GitHub Profile
+
+A GitHub profile can be used as a developer portfolio.
+
+Important things to maintain:
+
+* Professional username
+* Profile README
+* Good repositories
+* Meaningful commit history
+* Project documentation
+* Clean code
+* Pinned repositories
+
+---
+
+# 50. GitHub Repository for Resume
+
+For a Java Developer, useful repositories can be:
+
+```text
+Core-Java
+DSA-Java
+JDBC-CRUD
+Servlet-JSP-Project
+Hibernate-Project
+Spring-Boot-REST-API
+E-Commerce-Project
+```
+
+Each project should have a good README.
+
+---
+
+# 51. Important GitHub Commands
+
+```bash
+git init
+git clone <url>
+git status
+git add .
+git commit -m "message"
+git branch
+git branch -a
+git switch main
+git switch -c feature/login
+git remote -v
+git remote add origin <url>
+git remote remove origin
+git fetch
+git pull
+git push
+git push -u origin main
+git merge
+git rebase
+git stash
+git log
+git diff
+git tag
+```
+
+--
